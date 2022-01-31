@@ -23,7 +23,7 @@ class WorldTime {
       DateTime now = DateTime.parse(dateTime);
 
       String offset =
-          data['utc_offset'].substring(1, 3); //to remove + sign and empty space
+          data['utc_offset'].substring(0, 3); //to remove + sign and empty space
       now = now.add(Duration(hours: int.parse(offset)));
 
       if (now.hour > 6 && now.hour < 19) {
